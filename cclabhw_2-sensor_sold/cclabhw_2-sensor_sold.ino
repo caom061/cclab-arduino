@@ -28,9 +28,9 @@ void setup() {
 
   lcd.begin(16, 2);
   lcd.setCursor(0, 0); // First row.
-  lcd.print("Do NOT NOT NOT");
+  lcd.print("Marry me!");
   lcd.setCursor(3, 1); // Second row.
-  lcd.print("open the box! ");
+  lcd.print("I love you ");
   lcd.display();
 
   pinMode(trigPin, OUTPUT);
