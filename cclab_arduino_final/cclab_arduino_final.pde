@@ -1,6 +1,8 @@
 import processing.serial.*;
 
 Serial myport;
+import gifAnimation.*;
+Gif myAnimation;
 
 String portValue;
 int useless;
@@ -10,15 +12,17 @@ PFont getwhat;
 
 
 void setup(){
-  size(800,600); 
+  size(500,292); 
   
   
   getwhat = loadFont("Kefa-Bold-30.vlw");
   
   String arduinoport = Serial.list()[3];
   myport = new Serial(this, arduinoport, 9600);
+  frameRate(5);
   
-  
+  myAnimation = new Gif(this, "output1.gif");
+  myAnimation.play();
 }
 
 void draw(){
@@ -46,8 +50,9 @@ void draw(){
   }else{
     
     background(255, 0, 0, 255);
-    textFont(getwhat, 26);
-    text("Now you have to marry me !! lol", 200, 300);
+    image(myAnimation,0,0);
+    textFont(getwhat, 25);
+    text("Now, you have to marry me !! lol", 70, 150);
     
 
   }
